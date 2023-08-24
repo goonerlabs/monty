@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * monty_pint - function that prints the top value of in a stack_t.
+ * pint - function that prints the top value of in a stack_t.
  * @stack: pointer to the top node of stack_t.
  * @line_number: present working line number of a Monty bytecodes file.
 */
