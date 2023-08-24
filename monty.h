@@ -38,11 +38,15 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern char* n;
-char *n;
+extern char *data_n;
+char *data_n;
 
-void (*get_op_func(char *s))(stack_t **h, unsigned int line_number)
-void _free(stack_t *head)
-char **get_args(char *str)
+void (*get_op_func(char *s))(stack_t **h, unsigned int line_number);
+void _free(stack_t *head);
+char **get_args(char *str);
+void exit_ac_error(int ac);
+void open_exit_error(FILE *file, char **av);
+void terminate(char *str, int size);
+void no_op_err(void (*op)(stack_t **, unsigned int), unsigned int line_number);
 
 #endif /* MONTY_H */
