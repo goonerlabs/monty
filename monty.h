@@ -47,6 +47,6 @@ char **get_args(char *str);
 void exit_ac_error(int ac);
 void open_exit_error(FILE *file, char **av);
 void terminate(char *str, int size);
-void no_op_err(void (*op)(stack_t **, unsigned int), unsigned int line_number);
+void no_op_error(char **ptr, int line);
 
 #endif /* MONTY_H */

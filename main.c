@@ -25,7 +25,8 @@ int main(int ac, char **av)
 		terminate(code, len);
 		ptr = get_args(code);
 		op = get_op_func(ptr[0]);
-		no_op_err(op, line);
+		if (!op)
+			no_op_err(ptr, line);
 		if (ptr[1])
 			data_n = ptr[1];
 		op(&stack, line);

@@ -1,18 +1,16 @@
 #include "monty.h"
 
 /**
- * no_op_err - prints error and exists if no operator was found
- * @op: the operator function
- * @line_number: the line number
+ * no_op_error - prints an error message and exits the program
+ * @ptr: pointer to a block of memory on the heap
+ * @line: the line number of the instruction
  *
  * Return: void
  */
 
-void no_op_err(void (*op)(stack_t **, unsigned int), unsigned int line_number)
+void no_op_error(char **ptr, int line)
 {
-	if (!op)
-	{
-		fprintf(stderr, "L%u: unknown operator: %s\n", line_number, op);
-		exit(EXIT_FAILURE);
-	}
+	fprintf(stderr, "L%d: unknown instruction %s\n", line, ptr[0]);
+	free(ptr);
+	exit(EXIT_FAILURE);
 }
