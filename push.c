@@ -18,7 +18,6 @@ void push(stack_t **stack, unsigned int line_number)
 		if (!isdigit(data_n[i]))
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			free(node);
 			exit(EXIT_FAILURE);
 		}
 		i++;
