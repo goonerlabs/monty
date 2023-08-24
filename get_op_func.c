@@ -22,6 +22,8 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
 		{"sub", sub},
 		{"mod", mod},
 		{"pchar", pchar},
+		{"mul", mul},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	while (op[i].opcode)
