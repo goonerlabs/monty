@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * main - entry point function for the interpreter for monty bytecode
@@ -18,7 +19,7 @@ int main(int ac, char **av)
 	int len = 0;
 
 	exit_ac_error(ac);
-	file = open(av[1], "r");
+	file = fopen(av[1], "r");
 	open_exit_error(file, av);
 	while ((len = getline(&code, &i, file)) != -1)
 	{
@@ -26,7 +27,7 @@ int main(int ac, char **av)
 		ptr = get_args(code);
 		op = get_op_func(ptr[0]);
 		if (!op)
-			no_op_err(ptr, line);
+			no_op_error(ptr, line);
 		if (ptr[1])
 			data_n = ptr[1];
 		op(&stack, line);

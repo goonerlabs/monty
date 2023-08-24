@@ -8,7 +8,7 @@
 
 char **get_args(char *str)
 {
-	int i = 0, j = 0;
+	int i = 0;
 	char *tok;
 	static char *args[32] = {NULL};
 
