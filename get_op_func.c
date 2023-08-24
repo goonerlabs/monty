@@ -20,6 +20,8 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number)
 		{"nop", nop},
 		{"div", _div},
 		{"sub", sub},
+		{"mod", mod},
+		{"pchar", pchar},
 		{"mul", mul},
 		{"pstr", pstr},
 		{NULL, NULL}
