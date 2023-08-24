@@ -10,14 +10,8 @@ char **get_args(char *str)
 {
 	int i = 0, j = 0;
 	char *tok;
-	char **args;
+	static char *args[32] = {NULL};
 
-	args = malloc(sizeof(char *) * strlen(str) + 1);
-	if (!args)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
 	tok = strtok(str, " ");
 	while (tok)
 	{
@@ -25,6 +19,5 @@ char **get_args(char *str)
 		i++;
 		tok = strtok(NULL, " ");
 	}
-	args[i] = NULL;
 	return (args);
 }

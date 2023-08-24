@@ -11,6 +11,5 @@
 void no_op_error(char **ptr, int line)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line, ptr[0]);
-	free(ptr);
 	exit(EXIT_FAILURE);
 }

@@ -31,11 +31,9 @@ int main(int ac, char **av)
 			data_n = ptr[1];
 		op(&stack, line);
 		line++;
-		free(ptr);
 	}
 	free(code);
 	_free(stack);
 	fclose(file);
 	return (0);
 }
-
