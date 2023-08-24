@@ -1,6 +1,5 @@
 #include "monty.h"
-
-char *data_n = NULL;
+char *data_n;
 
 /**
  * main - entry point function for the interpreter for monty bytecode
