@@ -42,7 +42,6 @@ typedef struct instruction_s
 } instruction_t;
 
 extern char *data_n;
-char *data_n;
 
 void (*get_op_func(char *s))(stack_t **h, unsigned int line_number);
 void _free(stack_t *head);
