@@ -26,6 +26,8 @@ int main(int ac, char **av)
 	{
 		terminate(code, len);
 		ptr = get_args(code);
+		if (ptr[0] && ptr[0][0] == '#')
+			continue;
 		op = get_op_func(ptr[0]);
 		if (!op)
 			no_op_error(ptr, line);
