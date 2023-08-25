@@ -9,17 +9,26 @@
 
 void _div(stack_t **stack, unsigned int line_number)
 {
-	if ((*stack) == NULL || (*stack)->next == NULL)
+	stack_t *temp, *head;
+	int res;
+
+	temp = *stack;
+	head = *stack;
+
+	if (!(temp) || !(temp->next))
 	{
 		printf("L<%d>: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->next->n == 0)
+	if (temp->next->n == 0)
 	{
 		printf("L<%d>: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	(*stack)->next->n /= (*stack)->n;
-	pop(stack, line_number);
+	res = temp->next->n / head->n;
+	temp->next->n = res;
+	temp->prev = NULL;
+	*stack = temp->next;
+	free(head);
 }
