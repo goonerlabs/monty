@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * mod - function that finds the remainder between the second top 
+ * mod - function that finds the remainder between the second top
  *	element of the stack by the top element of the stack.
  * @stack: pointer to the top node of stack_t.
  * @line_number: present working line number of a Monty bytecodes file.
