@@ -8,17 +8,18 @@
 */
 void pchar(stack_t **stack, unsigned int line_number)
 {
-	if ((*stack) == NULL)
+	stack_t *tmp = *stack;
+
+	if (tmp == NULL)
 	{
 		printf("L<%d>: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->next->n < 0 || (*stack)->next->n > 127)
+	if (tmp->n < 0 || tmp->n > 127)
         {
                 printf("L<%d>: can't pchar, value out of range\n", line_number);
                 exit(EXIT_FAILURE);
         }
 
-	putchar((*stack)->next->n);
-	putchar('\n');
+	printf("%c\n",tmp->n);
 }
