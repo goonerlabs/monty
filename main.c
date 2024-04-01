@@ -19,18 +19,18 @@ int main(int ac, char **av)
 	void (*op)(stack_t **, unsigned int);
 	int len = 0;
 
-	exit_ac_error(ac);
+	exit_ac_err(ac);
 	file = fopen(av[1], "r");
-	open_exit_error(file, av);
+	open_exit_err(file, av);
 	while ((len = getline(&code, &i, file)) != -1)
 	{
-		terminate(code, len);
+		end_str(code, len);
 		ptr = get_args(code);
 		if (ptr[0] && ptr[0][0] == '#')
 			continue;
 		op = get_op_func(ptr[0]);
 		if (!op)
-			no_op_error(ptr, line);
+			no_op_err(ptr, line);
 		if (ptr[1])
 			data_n = ptr[1];
 		op(&stack, line);
